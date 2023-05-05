@@ -10,7 +10,7 @@ export const generateJWT = async (payload: any) => {
 };
 
 export const decodeJWT = async (token: string) => {
-  const secret = new TextEncoder().encode(process.env.JWT_SECRET.toString());
+  const secret = new TextEncoder().encode(process.env.JWT_SECRET?.toString());
   try {
     await jose.jwtVerify(token, secret);
   } catch (err) {
