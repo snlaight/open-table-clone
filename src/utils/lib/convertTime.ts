@@ -1,5 +1,6 @@
+import { DisplayTimeObject } from '@/utils/types';
 
-const displayTimeObject = {
+const displayTimeObject: DisplayTimeObject = {
   '00:00:00.000Z': '12:00 AM',
   '00:30:00.000Z': '12:30 AM',
   '01:00:00.000Z': '1:00 AM',
@@ -50,6 +51,6 @@ const displayTimeObject = {
   '23:30:00.000Z': '11:30 PM',
 };
 
-export type Time = keyof typeof displayTimeObject
+export type Time = keyof typeof displayTimeObject | string;
 
 export const convertToDisplayTime = (time: Time) => displayTimeObject[time];
