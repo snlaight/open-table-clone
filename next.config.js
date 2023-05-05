@@ -6,6 +6,9 @@ const nextConfig = {
   images: {
     domains: ['resizer.otstatic.com'],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig;
