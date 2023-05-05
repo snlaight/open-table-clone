@@ -39,8 +39,8 @@ const SearchResultCard = ({ restaurant }: Props) => {
         <div className='mb-9'>
           <div className='flex space-x-4 font-light text-reg'>
             <RestaurantPrice price={restaurant.price} />
-            <p className='capitalize'>{restaurant.Cuisine.name}</p>
-            <p className='capitalize'>{restaurant.Location.name}</p>
+            <p className='capitalize'>{restaurant?.Cuisine?.name}</p>
+            <p className='capitalize'>{restaurant?.Location?.name}</p>
           </div>
         </div>
         <div className='text-red-600'>

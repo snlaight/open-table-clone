@@ -8,7 +8,7 @@ type SignInFormValues = {
 type TSignInProps = {
   setDisabled: (value: boolean) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  fields: SignInFormValues;
+  fields: Partial<SignInFormValues>;
 
 }
 

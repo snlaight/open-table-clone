@@ -6,7 +6,7 @@ import { EmptyStar, HalfStar, FullStar } from '@/assets/icons';
 import { calculateReviewRatingAverage } from '@/utils/lib/convertRating';
 
 type Props = {
-  reviews: Review[];
+  reviews: Review[] ;
 }
 
 const Stars = ({ reviews }: Props) => {

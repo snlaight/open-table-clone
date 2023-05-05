@@ -31,11 +31,11 @@ export interface RestaurantCardType {
     name: string;
     main_img: string;
     slug: string;
-    Cuisine: Cuisine;
-    Location: Location;
+    Cuisine: Cuisine | null;
+    Location: Location | null;
     price: Price;
-    reviews: number;
-}
+    reviews: Review[];
+  }
 
 export interface RestaurantDetailsType {
     id: number;
@@ -43,11 +43,11 @@ export interface RestaurantDetailsType {
     images: string[];
     description: string;
     slug: string;
-    Location: Location;
+    Location: Location | null;
     reviews: Review[];
     open_time: string;
     close_time: string;
-}
+  }
 
 export interface RestaurantMenuType {
     id: number;

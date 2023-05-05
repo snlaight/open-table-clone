@@ -21,12 +21,12 @@ const RestaurantCard: React.FC<Props> = ({ restaurant }) => (
           <div className='flex mb-2'>
             <Stars reviews={restaurant.reviews} />
           </div>
-          <p className='ml-2'> {restaurant.reviews.length !== 1 ? `${restaurant.reviews.length} reviews` : `${restaurant.reviews.length} review` } </p>
+          <p className='ml-2'> {restaurant.reviews.length !== 1 as number ? `${restaurant.reviews.length} reviews` : `${restaurant.reviews.length} review` } </p>
         </div>
         <div className='flex space-x-3 font-light capitalize text-reg'>
-          <p>{restaurant.Cuisine.name}  </p>
+          <p>{restaurant?.Cuisine?.name}  </p>
           <RestaurantPrice price={restaurant.price} />
-          <p> {restaurant.Location.name} </p>
+          <p> {restaurant?.Location?.name} </p>
         </div>
         <p className='mt-1 text-sm font-bold'>Booked 3 times today</p>
       </div>

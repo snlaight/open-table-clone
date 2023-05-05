@@ -38,12 +38,11 @@ const InitialSignUpFormValues: SignUpFormValues = {
 };
 
 const Auth = () => {
-  const { loading, error } = useContext(AuthContext);
+  const { loading } = useContext(AuthContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSignin, setIsSignin] = useState(true);
   const [isDisabled, setIsDisabled] = useState(true);
-  const formValues = isSignin ? InitalSignInFormValues : InitialSignUpFormValues;
-  const [fields, handleChange] = useFormFields(formValues);
+  const [fields, handleChange] = useFormFields(isSignin ? InitalSignInFormValues : InitialSignUpFormValues);
   const { login, register } = useAuth();
 
   const handleSignIn = async ({ email, password }: SignInFormValues) => {

@@ -12,7 +12,7 @@ type SignUpFormValues = {
 type TSignUpProps = {
   setDisabled: (value: boolean) => void;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  fields: SignUpFormValues;
+  fields: Partial<SignUpFormValues>;
 }
 
 const SignUp: React.FC<TSignUpProps> = ({ setDisabled, handleChange, fields }) => {

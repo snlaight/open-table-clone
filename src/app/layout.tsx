@@ -4,7 +4,6 @@ import '@/styles/globals.css';
 
 import RenderProviders from '@/providers';
 import { Navbar } from '@/components';
-import { useAlert } from '@/utils/hooks/useAlert';
 
 const RootLayout = (
   {
