@@ -77,3 +77,7 @@ export interface ValidationRule {
 export interface ValidationRules {
     [key: string]: ValidationRule;
   }
+
+export interface ITableCount {
+    [key: number]: number[];
+  }

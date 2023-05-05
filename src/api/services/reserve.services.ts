@@ -8,6 +8,8 @@ import { findAllBookings, getRestaurantData } from '@/utils/lib/prisma.availabil
 import { makeBooking, createBookingOnTables } from '@/utils/lib/prisma.reservation-services';
 import { ReserveValidationRules } from '@/utils/validators';
 import { fetchAvailability } from '@/utils/lib/fetchAvailability';
+import { ITableCount } from '@/utils/interfaces';
+import { TTableCount } from '@/utils/types';
 
 export const handleReserve = async (req: NextApiRequest, res: NextApiResponse) => {
   const { slug, day, time, partySize } = req.query;
@@ -69,11 +71,11 @@ export const handleReserve = async (req: NextApiRequest, res: NextApiResponse) =
     return res.status(400).json({ errors: [{ partySize: 'Not enough tables available for party size.' }] });
   }
 
-  const TableCount: { 2: number[]; 4: number[] } = availableTables.reduce((acc, table) => {
+  const TableCount: ITableCount = availableTables.reduce((acc, table) => {
     const key = table.seats;
     return {
       ...acc,
-      [key]: [...acc[key], table.id],
+      [key as keyof ITableCount]: [...acc[key as keyof TTableCount], table.id as any],
     };
   }, { 2: [], 4: [] });
 
