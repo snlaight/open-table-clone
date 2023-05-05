@@ -1,18 +1,29 @@
-import './globals.css'
+'use client';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-      <body>{children}</body>
-    </html>
-  )
-}
+import '@/styles/globals.css';
+
+import RenderProviders from '@/providers';
+import { Navbar } from '@/components';
+import { useAlert } from '@/utils/hooks/useAlert';
+
+const RootLayout = (
+  {
+    children,
+  }: {
+      children: React.ReactNode
+    },
+) => (
+  <html lang='en'>
+    <head />
+    <body>
+      <RenderProviders>
+        <main>
+          <Navbar />
+          {children}
+        </main>
+      </RenderProviders>
+    </body>
+  </html>
+);
+
+export default RootLayout;

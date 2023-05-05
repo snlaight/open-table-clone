@@ -1,0 +1,20 @@
+import React from 'react';
+
+type Props = {
+    children: React.ReactNode;
+}
+
+const MenuItemsWrapper = ({ children }:Props) => (
+  <main className='mt-5 bg-white'>
+    <div className='pb-1 mt-4 mb-1'>
+      <h1 className='text-4xl font-bold'>
+        Menu
+      </h1>
+    </div>
+    <div className='flex flex-wrap justify-between'>
+      {children}
+    </div>
+  </main>
+);
+
+export default MenuItemsWrapper;
