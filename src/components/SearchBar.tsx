@@ -18,7 +18,7 @@ const SearchBar = () : ReactElement => {
   const [search, setSearch] = useState('');
   const router = useRouter();
   const params = useSearchParams();
-  const city = params.get('city');
+  const city = params?.get('city');
 
   const getSearchFromUrl = () => {
     if (city) {
